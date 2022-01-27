@@ -1,0 +1,98 @@
+:host {
+    width: 100%;
+    --productSize: 400px;
+}
+
+.container {
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.item {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 23px -7px rgba(0, 0, 0, 0.28);
+    }
+    .title {
+        font-size: 24px;
+        font-weight: bolder;
+    }
+    .content {
+        display:block;
+        padding: 1rem;
+    }
+    .price {
+        margin-left: auto;
+        font-size: 20px;
+        font-weight: 600;
+        color: #000;
+        float:right;
+    }
+    .image {
+        height: calc(var(--productSize) - 100px);
+        width: 100%;
+        object-fit: cover;
+    }
+    .figure {
+        height: calc(var(--productSize) - 100px);
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .show-more{
+        display:none;
+    }
+    .content:hover + .show-more{
+        display:block;
+      }
+    .item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    }   
+    .item {
+        fill: rgb(105, 103, 103);
+        margin: 0 8px 16px;
+        padding: 16px;
+        transition: all 0.2s ease-in-out;
+    }
+    .category span{
+        font-size:18px;
+        font-weight: 600
+      }
+      .categoryDropdown {
+        padding:10px;
+        margin:10px;
+        width:25%;
+      }
+    .category{
+        margin-top: 80px;
+        margin-left: 16px;
+    }
+    .quantity{
+        margin-top: 10px;
+        padding: 10px;
+        width: 40%;
+        border: 1px solid;
+        border-radius: 5px;
+    }
+    .add-to-cart{
+        float:right;
+        margin-top: 10px;
+        padding: 10px;
+        width: 30%;
+        border: none;
+        border-radius: 5px;
+        font-weight: 700;
+background-color: darkseagreen;
+    }
+    .add-to-cart:hover{
+        background-color:cadetblue;
+        color:white;
+    }
+    .description{
+        color: mediumpurple;
+        font-size: 16px;
+        font-weight: 400;
+    }

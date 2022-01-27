@@ -1,0 +1,31 @@
+<div>
+    <div class="category">
+        <span>Select Category:</span>
+        <select class="categoryDropdown" [(ngModel)]="productList.p_category" (ngModelChange)="SearchCategory(productList.p_category)">        
+            <option class="categoryValues" *ngFor="let prod of productCategory">{{prod}} </option>  
+        </select>  
+    </div>
+      
+    <div class="container">
+        <ng-container *ngFor="let product of productDetails">
+            <section class="item">
+                <figure class="figure">
+                    <img class="image" src="/assets/fruits.jfif" alt="" />
+                </figure>
+                    <div class="content">
+                        <span class="title">{{ product.p_name }}</span>
+                        <span class="price">{{ product.p_cost | currency: 'INR' }}</span>
+                        <div>
+                            <input type="number" min="1" class="quantity" #prodQuantity value="1" style="text-align:center;" >
+                            <button class="add-to-cart" (click)="addToCart(prodQuantity.value,product)">Add</button>
+                        </div>
+                     
+                    </div>
+                    <div class="show-more" *ngIf = "product.p_details">
+                        <em class="description">More Details : <br/>
+                            {{ product.p_details}}</em>
+                    </div>
+            </section>
+        </ng-container>
+    </div>
+</div>
